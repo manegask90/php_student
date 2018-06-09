@@ -1,24 +1,39 @@
 <html>
 <head>
     <title>Массивы</title>
+
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
 
-
 <?php
+$img_src = $_GET['id'];
 
-$x = $_POST['x'];
-$y = $_POST['y'];
+$images = [
+    1 => 'cat.jpg',
+    2 => 'dog.jpg',
+    3 => 'snake.jpg',
+    4 => 'bear.jpg'
+];
 
-$res = $x + $y;
 ?>
-<form action="/index.php" method="post">
-    <input type="number" name="x" value="<?php echo (isset($_POST['x']))?$_POST['x']:'';?>" >
-    +
-    <input type="number" name="y" value="<?php echo (isset($_POST['y']))?$_POST['y']:'';?>" >
-    <input type="submit" value="=">
-    <?php echo $res; ?>
-</form>
 
+
+<ul>
+    <li>
+        <a href="/?id=1">Cat</a>
+    </li>
+    <li>
+        <a href="/?id=2">Dog</a>
+    </li>
+    <li>
+        <a href="/?id=3">Snake</a>
+    </li>
+    <li>
+        <a href="/?id=4">Bear</a>
+    </li>
+</ul>
+
+<image src="images/<?php echo $images[$img_src]; ?>" ></image>
 </body>
 </html>
