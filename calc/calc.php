@@ -1,5 +1,7 @@
 <?php
 
+$operations = ['+', '-', '*', '/'];
+
 if (isset($_POST['x'])) {
     $x = $_POST['x'];
 } else {

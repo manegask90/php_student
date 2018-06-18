@@ -16,10 +16,10 @@ require __DIR__ . '/calc.php';
 <form action="/calc/index.php" method="post">
     <input type="number" name="x" value="<?php echo $x; ?>" step="any">
     <select name="op">
-        <option value="+"<?php if ('+'==$op) { ?> selected <?php } ?>>+</option>
-        <option value="-"<?php if ('-'==$op) { ?> selected <?php } ?>>-</option>
-        <option value="*"<?php if ('*'==$op) { ?> selected <?php } ?>>*</option>
-        <option value="/"<?php if ('/'==$op) { ?> selected <?php } ?>>/</option>
+        <?php
+        foreach ($operations as $operation ) { ?>
+            <option value="<?php echo $operation; ?>" <?php if ($operation==$op) { ?> selected <?php } ?>><?php echo $operation; ?></option>
+        <?php } ?>
     </select>
     <input type="number" name="y" value="<?php echo $y; ?>" step="any">
     <input type="submit" value="=">
