@@ -1,12 +1,12 @@
 <?php
 
 if (isset($_POST['x'])) {
-    $x = (int)$_POST['x'];
+    $x = $_POST['x'];
 } else {
     $x = null;
 }
 if (isset($_POST['y'])) {
-    $y = (int)$_POST['y'];
+    $y = $_POST['y'];
 } else {
     $y = null;
 }
