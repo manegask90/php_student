@@ -15,5 +15,8 @@ if (isset($_POST['op'])) {
 } else {
     $op = null;
 }
-
-$res = calculate($x, $y, $op);
+if ($y == 0 && $op == '/') {
+    $res = 'Ошибка';
+} else {
+    $res = calculate($x, $y, $op);
+}
