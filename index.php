@@ -6,36 +6,29 @@
 </head>
 <body>
 
-<!--<ul>-->
-<!--    <li>-->
-<!--        <a href="/?id=1">Cat</a>-->
-<!--    </li>-->
-<!--    <li>-->
-<!--        <a href="/?id=2">Dog</a>-->
-<!--    </li>-->
-<!--    <li>-->
-<!--        <a href="/?id=3">Snake</a>-->
-<!--    </li>-->
-<!--    <li>-->
-<!--        <a href="/?id=4">Bear</a>-->
-<!--    </li>-->
-<!--</ul>-->
-<!---->
-<!--<image src="images/--><?php //echo $images[$img_src]; ?><!--" ></image>-->
-
-<form action="/upload.php" method="post" enctype="multipart/form-data">
-    <input type="file" name="newfile">
+<form action="/newuser.php" method="post">
+    <input type="text" name="newuser">
     <input type="submit">
 </form>
 <?php
 
-//$res   = scandir(__DIR__ );
-//var_dump($res);
-//$res[] = 'Custom';
-//
+$res   = fopen(__DIR__ . '/book.txt', 'r');
+$users = ["User 1\n", "User 2\n", "User 3\n"];
+
+foreach ($users as $user) {
+    $write  = fwrite($res, $user);
+}
+
+while (!feof($res)) {
+    $str = fgets($res);
+    echo $str;
+    echo '<br>';
+}
+//$write  = file_put_contents($res, $users);
 //$str = implode("\n", $res);
 //
-//$data = file_put_contents(__DIR__ . '/db.txt', $res);
+//$data = file_put_contents(__DIR__ . '/book.txt', $res);
+//echo $data;
 
 ?>
 </body>
