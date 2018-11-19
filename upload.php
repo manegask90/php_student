@@ -1,7 +1,5 @@
 <?php
 
-var_dump($_FILES);
-
 if (!empty($_FILES)) {
     $uploaded = $_FILES['newfile'];
     if ($uploaded['error'] == 0) {
